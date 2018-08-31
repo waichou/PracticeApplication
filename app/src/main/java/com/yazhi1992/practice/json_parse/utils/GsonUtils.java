@@ -1,4 +1,4 @@
-package com.fastjson.gson.utils.utils;
+package com.yazhi1992.practice.json_parse.utils;
 
 /**
  * Created by zhouwei on 2018/8/29.

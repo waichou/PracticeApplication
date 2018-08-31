@@ -4,21 +4,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.fastjson.gson.utils.utils.FastJsonUtils;
-import com.fastjson.gson.utils.utils.GsonUtils;
+import com.yazhi1992.practice.R;
 import com.yazhi1992.practice.json_parse.bean.User;
+import com.yazhi1992.practice.json_parse.utils.FastJsonUtils;
+import com.yazhi1992.practice.json_parse.utils.GsonUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ParseActivity extends AppCompatActivity {
+public class ParseJsonActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_parse_json);
     }
 
     public void getValueForGsonClick(View view) {

@@ -15,8 +15,8 @@ import com.yazhi1992.practice.flowlayout.FlowLayoutActivity;
 import com.yazhi1992.practice.hencoder.HenCoder;
 import com.yazhi1992.practice.hook_icon.HookIconActivity;
 import com.yazhi1992.practice.immersion_status_bar.MainImmersionActivity;
+import com.yazhi1992.practice.json_parse.ParseJsonActivity;
 import com.yazhi1992.practice.line_chart_view.LineChartActivity;
-import com.yazhi1992.practice.question_button.QuestionActivity;
 import com.yazhi1992.practice.ripple_view.RippleActivity;
 import com.yazhi1992.practice.rotate_circle.RotateCircleActivity;
 import com.yazhi1992.practice.vertical_text.VerticalTextActivity;
@@ -41,9 +41,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.alipayHookIconBtn).setOnClickListener(this);
         findViewById(R.id.hencoder_practive).setOnClickListener(this);
         findViewById(R.id.annotation_test).setOnClickListener(this);
-        findViewById(R.id.question_practive).setOnClickListener(this);
         findViewById(R.id.arthmetic_practive).setOnClickListener(this);
         findViewById(R.id.flowlayout).setOnClickListener(this);
+        findViewById(R.id.bannerBtn).setOnClickListener(this);
+        findViewById(R.id.parseJsonBtn).setOnClickListener(this);
 
         Toast.makeText(this, "test", Toast.LENGTH_SHORT).show();
         Log.d("test", "test");
@@ -100,10 +101,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //注解小 demo
             startActivity(new Intent(this, TestAnnotationActivity.class));
             break;
-        case R.id.question_practive:
-            //解惑
-            startActivity(new Intent(this, QuestionActivity.class));
-            break;
         case R.id.arthmetic_practive:
             //算法
             startActivity(new Intent(this, ArthmeticActivity.class));
@@ -111,6 +108,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         case R.id.flowlayout:
             //流式标签
             startActivity(new Intent(this, FlowLayoutActivity.class));
+            break;
+        case R.id.bannerBtn:
+            //轮播
+            startActivity(new Intent(this, BannerActivity.class));
+            break;
+        case R.id.parseJsonBtn:
+            //轮播
+            startActivity(new Intent(this, ParseJsonActivity.class));
             break;
         default:
             break;

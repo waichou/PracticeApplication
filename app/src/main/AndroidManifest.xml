@@ -41,18 +41,18 @@
             android:name=".immersion_status_bar.ImmersionActionBarActivity"
             android:theme="@style/AppTheme" />
         <activity android:name=".annnotation.TestAnnotationActivity" />
-        <activity
-            android:name=".question_button.SizeActivity"
-            android:theme="@style/NoActionBarTheme" />
-        <activity android:name=".question_button.QuestionActivity" />
-        <activity android:name=".question_button.OnTouchActivity" />
+
         <activity android:name=".arthmetic_practive.ArthmeticActivity" />
         <activity android:name=".hencoder.ViwOneActivity" />
         <activity android:name=".hencoder.HenCoder" />
         <activity android:name=".flowlayout.FlowLayoutActivity" />
         <activity android:name=".swipelayout.SwipeLayoutActivity" />
-        <activity android:name=".circleimg.CircleImageActivity" />
-        <activity android:name=".circleimg.CircleImgActivity"></activity>
+        <activity android:name=".circleimg.CircleImgActivity" />
+        <activity android:name=".json_parse.ParseJsonActivity"/>
+        <activity
+            android:name=".BannerActivity"
+            android:theme="@style/NoActionBarTheme"/>
+
     </application>
 
 </manifest>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -29,118 +28,107 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="注解小 demo"
-                android:textAllCaps="false"
-                />
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/hencoder_practive"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="HenCoder 练习代码（Kotlin 实现）"
-                android:textAllCaps="false"
-                />
-
-            <Button
-                android:id="@+id/question_practive"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="解惑"
-                android:textAllCaps="false"
-                />
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/arthmetic_practive"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="算法"
-                android:textAllCaps="false"
-                />
+                android:textAllCaps="false" />
 
             <Button
                 android:id="@+id/immersionStatusBarBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="沉浸式状态栏"
-                />
+                android:text="沉浸式状态栏" />
 
             <Button
                 android:id="@+id/alipayHookIconBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="支付宝支付成功打钩"
-                />
+                android:text="支付宝支付成功打钩" />
 
             <Button
                 android:id="@+id/elemeBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="饿了么购物车按钮"
-                />
+                android:text="饿了么购物车按钮" />
 
             <Button
                 android:id="@+id/rotateBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="圆环旋转渐变按钮"
-                />
+                android:text="圆环旋转渐变按钮" />
 
             <Button
                 android:id="@+id/waveBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="波浪效果（两种实现）"
-                />
+                android:text="波浪效果（两种实现）" />
 
             <Button
                 android:id="@+id/verticalTextBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="竖排文字"
-                />
+                android:text="竖排文字" />
 
             <Button
                 android:id="@+id/rippleBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="涟漪"
-                />
+                android:text="涟漪" />
 
             <Button
                 android:id="@+id/lineChart"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="折线图"
-                />
+                android:text="折线图" />
 
             <Button
                 android:id="@+id/wheelView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="滚轮"
-                android:visibility="gone"
-                />
+                android:visibility="gone" />
 
             <Button
                 android:id="@+id/bezierBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="贝塞尔水滴动画"
-                android:visibility="gone"
-                />
+                android:visibility="gone" />
 
             <Button
                 android:id="@+id/roundBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="圆角控件"
-                />
+                android:text="圆角控件" />
 
             <Button
                 android:id="@+id/flowlayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="流式标签"
-                />
+                android:text="流式标签" />
+
+            <Button
+                android:id="@+id/bannerBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="轮播" />
+
+            <Button
+                android:id="@+id/parseJsonBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="解析JSON" />
 
         </LinearLayout>
 
