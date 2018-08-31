@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.yazhi1992.practice">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".eleme_button.ElemeBtnActivity" />
+        <activity android:name=".rotate_circle.RotateCircleActivity" />
+        <activity android:name=".wave_view.WaveViewActivity" />
+        <activity android:name=".vertical_text.VerticalTextActivity" />
+        <activity android:name=".bezier_anim.BezierAnimActivity" />
+        <activity android:name=".ripple_view.RippleActivity" />
+        <activity android:name=".line_chart_view.LineChartActivity" />
+        <activity android:name=".wheel_view.WheelViewActivity" />
+        <activity android:name=".hook_icon.HookIconActivity" />
+        <activity android:name=".immersion_status_bar.MainImmersionActivity" />
+        <activity
+            android:name=".immersion_status_bar.ImmersionImageActivity"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".immersion_status_bar.ImmersionBarActivity"
+            android:theme="@style/NoActionBarTheme"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".immersion_status_bar.ImmersionNavActivity"
+            android:label="@string/title_activity_immersion_nav"
+            android:theme="@style/NoActionBarTheme" />
+        <activity
+            android:name=".immersion_status_bar.ImmersionActionBarActivity"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".annnotation.TestAnnotationActivity" />
+        <activity
+            android:name=".question_button.SizeActivity"
+            android:theme="@style/NoActionBarTheme" />
+        <activity android:name=".question_button.QuestionActivity" />
+        <activity android:name=".question_button.OnTouchActivity" />
+        <activity android:name=".arthmetic_practive.ArthmeticActivity" />
+        <activity android:name=".hencoder.ViwOneActivity" />
+        <activity android:name=".hencoder.HenCoder" />
+        <activity android:name=".flowlayout.FlowLayoutActivity" />
+        <activity android:name=".swipelayout.SwipeLayoutActivity" />
+        <activity android:name=".circleimg.CircleImageActivity" />
+        <activity android:name=".circleimg.CircleImgActivity"></activity>
+    </application>
+
+</manifest>
