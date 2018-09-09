@@ -13,9 +13,11 @@ public abstract class BaseMvpActivity<T extends BasePresenter> extends BaseActiv
 
     protected T mPresenter;
 
+    protected abstract void createPresenter();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        initInject();
+        createPresenter();
         if (mPresenter != null)
             mPresenter.attachView(this);
 
@@ -29,7 +31,5 @@ public abstract class BaseMvpActivity<T extends BasePresenter> extends BaseActiv
             mPresenter.detachView();
         }
     }
-
-    protected abstract void initInject();
 
 }

@@ -1,15 +1,12 @@
 package com.yazhi1992.practice.mvp.net;
 
-
-import com.zcy.ghost.vivideo.BuildConfig;
-import com.zcy.ghost.vivideo.app.Constants;
-import com.zcy.ghost.vivideo.model.bean.VideoRes;
-import com.zcy.ghost.vivideo.model.exception.ExceptionEngine;
-import com.zcy.ghost.vivideo.model.exception.ServerException;
-import com.zcy.ghost.vivideo.model.http.api.VideoApis;
-import com.zcy.ghost.vivideo.model.http.response.VideoHttpResponse;
-import com.zcy.ghost.vivideo.utils.KL;
-import com.zcy.ghost.vivideo.utils.SystemUtils;
+import com.blankj.utilcode.util.NetworkUtils;
+import com.yazhi1992.practice.BuildConfig;
+import com.yazhi1992.practice.mvp.app.Constants;
+import com.yazhi1992.practice.mvp.model.http.api.VideoApis;
+import com.yazhi1992.practice.mvp.model.http.exception.ExceptionEngine;
+import com.yazhi1992.practice.mvp.model.http.exception.ServerException;
+import com.yazhi1992.practice.mvp.model.http.response.VideoHttpResponse;
 
 import java.io.File;
 import java.io.IOException;
@@ -32,10 +29,10 @@ import rx.schedulers.Schedulers;
 
 
 public class HttpMethods {
-    public static final String BASE_HOST_URL = VideoApis.HOST;
+    public static final String BASE_HOST_URL = Constants.BASE_URL;
 
     private Retrofit retrofit;
-    private VideoApis mService;
+//    private VideoApis mService;
     private static OkHttpClient okHttpClient;
 
     private static void initOkHttp() {
@@ -52,7 +49,7 @@ public class HttpMethods {
                 @Override
                 public Response intercept(Chain chain) throws IOException {
                     Request request = chain.request();
-                    if (!SystemUtils.isNetworkConnected()) {
+                    if (!NetworkUtils.isConnected()) {
                         request = request.newBuilder()
                                 .cacheControl(CacheControl.FORCE_CACHE)
                                 .build();
@@ -60,17 +57,13 @@ public class HttpMethods {
                     int tryCount = 0;
                     Response response = chain.proceed(request);
                     while (!response.isSuccessful() && tryCount < 3) {
-
-                        KL.d(RetrofitHelper.class, "interceptRequest is not successful - :{}", tryCount);
-
                         tryCount++;
 
                         // retry the request
                         response = chain.proceed(request);
                     }
 
-
-                    if (SystemUtils.isNetworkConnected()) {
+                    if (NetworkUtils.isConnected()) {
                         int maxAge = 0;
                         // 有网络时, 不缓存, 最大保存时长为0
                         response.newBuilder()
@@ -110,12 +103,16 @@ public class HttpMethods {
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .build();
-        mService = retrofit.create(VideoApis.class);
+//        mService = retrofit.create(VideoApis.class);
     }
 
     //在访问HttpMethods时创建单例
     private static class SingletonHolder {
         private static final HttpMethods INSTANCE = new HttpMethods();
+    }
+
+    public Retrofit getRetrofit() {
+        return retrofit;
     }
 
     //获取单例
@@ -124,31 +121,17 @@ public class HttpMethods {
         return SingletonHolder.INSTANCE;
     }
 
-    /**
-     * ClassificationPresenter
-     *
-     * @return
-     */
-    public Observable<VideoRes> queryClassification() {
-        return mService.getHomePage()
-                .map(new ServerResultFunc<VideoRes>())
-                .onErrorResumeNext(new HttpResultFunc<VideoRes>())
-                .subscribeOn(Schedulers.io())
-                .unsubscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread());
-    }
-
-    private class ServerResultFunc<T> implements Func1<VideoHttpResponse<T>, T> {
+    public static class ServerResultFunc<T> implements Func1<VideoHttpResponse<T>, T> {
         @Override
         public T call(VideoHttpResponse<T> httpResult) {
             if (httpResult.getCode() != 200) {
                 throw new ServerException(httpResult.getCode(), httpResult.getMsg());
             }
-            return httpResult.getRet();
+            return httpResult.getData();
         }
     }
 
-    private class HttpResultFunc<T> implements Func1<Throwable, Observable<T>> {
+    public static class HttpResultFunc<T> implements Func1<Throwable, Observable<T>> {
         @Override
         public Observable<T> call(Throwable throwable) {
             return Observable.error(ExceptionEngine.handleException(throwable));

@@ -1,7 +1,7 @@
 package com.yazhi1992.practice.mvp.net;
 
 
-import com.zcy.ghost.vivideo.model.exception.ApiException;
+import com.yazhi1992.practice.mvp.model.http.exception.ApiException;
 
 import rx.Subscriber;
 

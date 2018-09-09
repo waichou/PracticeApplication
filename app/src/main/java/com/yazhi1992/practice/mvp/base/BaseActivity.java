@@ -9,7 +9,6 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.yazhi1992.practice.mvp.app.App;
-import com.yazhi1992.practice.mvp.utils.KL;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -28,7 +27,6 @@ public abstract class BaseActivity extends SupportActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        KL.d(this.getClass(), this.getClass().getName() + "------>onCreate");
         init();
 
         setContentView(getLayout());
@@ -40,44 +38,38 @@ public abstract class BaseActivity extends SupportActivity {
     }
 
     protected void init() {
-        setTranslucentStatus(true);
+//        setTranslucentStatus(true);
         App.getInstance().registerActivity(this);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        KL.d(this.getClass(), this.getClass().getName() + "------>onStart");
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        KL.d(this.getClass(), this.getClass().getName() + "------>onRestart");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        KL.d(this.getClass(), this.getClass().getName() + "------>onResume");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        KL.d(this.getClass(), this.getClass().getName() + "------>onPause");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        KL.d(this.getClass(), this.getClass().getName() + "------>onStop");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        KL.d(this.getClass(), this.getClass().getName() + "------>onDestroy");
         if (mUnBinder != null)
             mUnBinder.unbind();
         App.getInstance().unregisterActivity(this);

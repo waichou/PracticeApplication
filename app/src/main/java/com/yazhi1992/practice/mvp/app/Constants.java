@@ -10,6 +10,8 @@ import java.io.File;
  * date: 2016/9/21 10:05
  */
 public class Constants {
+    public static final String BASE_URL = "http://192.168.1.6:8080/";
+
     //================= PATH ====================
     public static final String PATH_DATA = App.getInstance().getCacheDir().getAbsolutePath() + File.separator + "data";
     public static final String PATH_CACHE = PATH_DATA + File.separator + "NetCache";

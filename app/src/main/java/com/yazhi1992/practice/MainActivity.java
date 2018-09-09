@@ -17,6 +17,7 @@ import com.yazhi1992.practice.hook_icon.HookIconActivity;
 import com.yazhi1992.practice.immersion_status_bar.MainImmersionActivity;
 import com.yazhi1992.practice.json_parse.ParseJsonActivity;
 import com.yazhi1992.practice.line_chart_view.LineChartActivity;
+import com.yazhi1992.practice.mvp.ui.activity.MVPEntry_1_Activity;
 import com.yazhi1992.practice.ripple_view.RippleActivity;
 import com.yazhi1992.practice.rotate_circle.RotateCircleActivity;
 import com.yazhi1992.practice.vertical_text.VerticalTextActivity;
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.flowlayout).setOnClickListener(this);
         findViewById(R.id.bannerBtn).setOnClickListener(this);
         findViewById(R.id.parseJsonBtn).setOnClickListener(this);
+        findViewById(R.id.mvpBtn).setOnClickListener(this);
 
         Toast.makeText(this, "test", Toast.LENGTH_SHORT).show();
         Log.d("test", "test");
@@ -117,7 +119,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             //轮播
             startActivity(new Intent(this, ParseJsonActivity.class));
             break;
-        default:
+        case R.id.mvpBtn:
+            startActivity(new Intent(this, MVPEntry_1_Activity.class));
             break;
         }
     }

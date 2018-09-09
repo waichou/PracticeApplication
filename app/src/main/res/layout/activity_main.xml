@@ -130,6 +130,12 @@
                 android:layout_height="wrap_content"
                 android:text="解析JSON" />
 
+            <Button
+                android:id="@+id/mvpBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="MVP使用" />
+
         </LinearLayout>
 
     </ScrollView>
