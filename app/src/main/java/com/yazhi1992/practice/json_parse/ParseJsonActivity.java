@@ -133,4 +133,43 @@ public class ParseJsonActivity extends AppCompatActivity {
 
 
     }
+
+    /**
+     * 解析成list or map
+     * @param view
+     *
+     * 小结：List ---对应 []
+     *      Map | User ---对应 {}
+     * 根据Json字符串的[] 或 {} 类型对应左边类型来确定最终得到的数据类型
+     */
+    public void getListOrMapJsonClick(View view) {
+        List<String> listStr = new ArrayList<>();
+        listStr.add("aaa");
+        listStr.add("bbb");
+        listStr.add("ccc");
+
+        String result = GsonUtils.toJsonString(listStr);
+        System.out.println("list str=" + result);
+
+        List<User> userList = new ArrayList<>();
+        userList.add(new User("aaa",11));
+        System.out.println("list user for gson=" + GsonUtils.toJsonString("list<user>="+userList));
+        System.out.println("list user for fast =" + FastJsonUtils.toJsonString(userList));
+
+
+        List<Map<String,String>> listMapForStr = new ArrayList<>();
+        Map<String,String> map = new HashMap<>();
+        map.put("aaa","bbb");
+        listMapForStr.add(map);
+
+        System.out.println("list map<String,String>=" + GsonUtils.toJsonString(listMapForStr));
+
+        List<Map<String,User>> listMapForUser = new ArrayList<>();
+        Map<String,User> mapUser = new HashMap<>();
+        mapUser.put("aaa",new User("zhouwei",12));
+
+        listMapForUser.add(mapUser);
+        System.out.println("list map<String,User>=" + GsonUtils.toJsonString(listMapForUser));
+    }
+
 }
